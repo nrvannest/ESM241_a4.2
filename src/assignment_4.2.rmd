@@ -76,10 +76,11 @@ Kendra_melt <- Kendra %>%
 
 #Bar plot showing constituent support for certain issues
 ggplot(Kendra_melt, aes(x = value)) + 
-  geom_col(aes(y = variable)) +
+  geom_col(aes(y = variable), fill = "red") +
   labs(y = c(), x = "Percent population",
-       title = "Public Perception of Global Warming as a Threat") +
-  scale_y_discrete(labels = c("Horn Win Margin", "GW not discussed", "Pro Offshore Drilling", "Lack of Media Attention", "Poor Timing", "Global Warming Important"))
+       title = "Public Perception of Global \n Warming as a Threat") +
+  scale_y_discrete(labels = c("Horn Win Margin", "GW not discussed", "Pro Offshore Drilling", "Lack of Media Attention", "Poor Timing", "Global Warming Important")) +
+  theme_minimal()
   
 
 ```
