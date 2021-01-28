@@ -16,6 +16,7 @@ library(tidyverse) #for dataframe functions
 library(janitor) #for renaming variables
 library(ggplot2) #for plotting
 library(stringr) #for text manipulation
+library(here)
 
 `%nin%` = Negate(`%in%`)
 
@@ -23,8 +24,8 @@ library(stringr) #for text manipulation
 
 #reading datasets:
 #note: this will only work without changing the paths if you open the .Rproj file
-data <- read.csv("congress_116_data.csv")
-metadata <- read.csv("Combined_Metadata.csv")
+data <- read.csv(here("data","congress_116_data.csv"))
+metadata <- read.csv(here("data", "Combined_Metadata.csv"))
 ```
 
 ```{r, data carpentry}
