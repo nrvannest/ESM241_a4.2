@@ -6,7 +6,7 @@ output: word_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 ## Packages ----
 
@@ -41,16 +41,6 @@ vulnerable <- data %>%
 ```
 
 ```{r, exploratory graphs}
-#plotting the distribution of primary and general margins:
-group.colors <- c(D = "blue", R = "red", IDP ="green")
-ggplot(vulnerable, aes(x= primary_percent, 
-                       y= general_percent,
-                       color = party)) + 
-  geom_point() +
-  geom_text(aes(label=district_id),
-            hjust=0, vjust=0) +
-  scale_color_manual(values=group.colors) + 
-  ggtitle("Vote Percentages in 2018 House Elections")
 ## Data filtering and vizualization to examine vulnerability and opinion ----
 
 #selecting Democrats vulnerable to primary challenges who are not strongest possible environmentalists:
@@ -79,6 +69,7 @@ Kendra <- vulnerableD %>%
   select(general_percent, discussOppose, priority, president, governor, localofficials, mediaweeklyOppose, timingOppose, affectweather) %>% 
   melt()
 
+#Bar plot showing constituent support for certain issues
 ggplot(Kendra, aes(x = value)) + 
   geom_col(aes(y = variable)) +
   labs(y = c(), x = "Percent population",
