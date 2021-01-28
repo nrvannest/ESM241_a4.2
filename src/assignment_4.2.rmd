@@ -40,7 +40,7 @@ vulnerable <- data %>%
   filter(primary_percent < 0.6 | general_percent < 0.6)
 ```
 
-```{r, exploratory graphs}
+```{r, exploratory graphs, include = FALSE}
 ## Data filtering and vizualization to examine vulnerability and opinion ----
 
 #selecting Democrats vulnerable to primary challenges who are not strongest possible environmentalists:
@@ -64,10 +64,15 @@ ggplot(vulnerableD, aes(x=lcv_score,
 library(reshape2)
 
 Kendra <- vulnerableD %>% 
-  filter(candidate_name == "Horn, Kendra",) %>% 
+  filter(candidate_name == "Horn, Kendra",)
+
+Kendra_melt <- Kendra %>% 
   mutate(general_percent = general_percent*100) %>% 
-  select(general_percent, discussOppose, priority, president, governor, localofficials, mediaweeklyOppose, timingOppose, affectweather) %>% 
+  select(general_percent, discussOppose, drilloffshore, mediaweeklyOppose, 
+         timingOppose, priority) %>% 
   melt()
+
+# Table showing data from Kendra df
 
 #Bar plot showing constituent support for certain issues
 ggplot(Kendra, aes(x = value)) + 
