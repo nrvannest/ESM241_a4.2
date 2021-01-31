@@ -14,7 +14,7 @@ output:
 
 2. Member of Congress: **Rep. Kendra Horn (D)** - Oklahoma District 5, 2018-2020
 
-By manipulating the data variables consistent with renewable energy: "fundrenewables", drilloffshore", "discussOppose", and  Representative Kendra Scott (D) was isolated because of her progressive and centre position on select issues. By identifying her progressive stance, especially within Oklahoma's majorily conservative 5th District, we knew she did not align with the majorty of her constituents. Public opinion could pivot support for an environmental campgain as well as hers. In the interest of fun, we supoort the "anti-environmental" audience in order to remove Rep Horn or convince her to oppose the policy.  
+By manipulating the data variables consistent with renewable energy: "fundrenewables", drilloffshore", "discussOppose", and  Representative Kendra Scott (D) was isolated because of her progressive and centre position on select issues. By identifying her progressive stance, especially within Oklahoma's majorly conservative 5th District, we knew she did not align with the majority of her constituents. Public opinion could pivot support for an environmental campaign as well as hers. In the interest of fun, we support the "anti-environmental" audience in order to remove Rep Horn or convince her to oppose the policy.  
 
 
 ```{r setup, include=FALSE}
@@ -107,7 +107,7 @@ Rep Horn’s 1.4 percentage points defeat over incumbent Rep. Steve Russell (R) 
 
 4. Political Advertisement
 
-The Reject Ready for 100 campaign will create television and print ads to reach its constituents, many of whom work in the oil and natural gas industry, and will be affected by Ready for 100 if it's implemented in Oklahoma.
+The Reject Ready for 100 campaign will create television and print ads to reach its constituents, many of whom work in the oil and natural gas industry, and will be affected by Ready for 100 if it's implemented in Oklahoma. This ad will encourage constituents to tell Representative Horn to reject Ready for 100 because it puts their jobs at risk.
 
 **Political Ad:**
 Oil and natural gas workers and their families are deeply concerned about Kendra Horn's support for Ready for 100, the clean energy campaign that will hurt Oklahoma's booming industries. Clean energy initiatives will affect our state's workers, their families, and their communities' livelihood by forcing oil and natural gas workers out of their jobs, and replacing them with new "clean" technology to mobilize a "clean energy revolution", putting many Oklahomans at risk of falling into poverty within the next decade and increasing customers' utility bills.
