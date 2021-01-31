@@ -4,7 +4,10 @@ author: "Nikole Vannest, Cat Takata, Ethan Hoffman"
 date: "1/27/2021"
 output: word_document
 ---
+1. We chose the Go Solar/Ready for 100 campaign (we are against solar power).
 
+2. Member of Congress: Rep. Kendra Horn (D) - Oklahoma District 5, 2018-2020
+(Lost her seat in the 2020 Oklahoma General Election to Stephanie Bice (R))
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
@@ -85,3 +88,14 @@ ggplot(Kendra_melt, aes(x = value)) +
 
 ```
 
+3. Key Public Audience
+
+
+4. Political Advertisement
+
+The Reject Ready for 100 campaign will create television and print ads to reach its constituents, many of whom work in the oil and natural gas industry, and will be affected by Ready for 100 if it's implemented in Oklahoma.
+
+**Political Ad:**
+Oil and natural gas workers and their families are deeply concerned about Kendra Horn's support for Ready for 100, the clean energy campaign that will hurt Oklahoma's booming industries. Clean energy initiatives will affect our state's workers, their families, and their communities' livelihood by forcing oil and natural gas workers out of their jobs, and replacing them with new "clean" technology to mobilize a "clean energy revolution", putting many Oklahomans at risk of falling into poverty within the next decade and increasing customers' utility bills.
+
+Tell Kendra Horn: Protect our Workers, Protect their Jobs, Reject Ready for 100
