@@ -109,6 +109,8 @@ Rep Horn’s 1.4 percentage points defeat over incumbent Rep. Steve Russell (R) 
 
 The Reject Ready for 100 campaign will create television and print ads to reach its constituents, many of whom work in the oil and natural gas industry, and will be affected by Ready for 100 if it's implemented in Oklahoma. This ad will encourage constituents to tell Representative Horn to reject Ready for 100 because it puts their jobs at risk.
 
+![Political Ad](data/ESM241_a42.png)
+
 **Political Ad:**
 Oil and natural gas workers and their families are deeply concerned about Kendra Horn's support for Ready for 100, the clean energy campaign that will hurt Oklahoma's booming industries. Clean energy initiatives will affect our state's workers, their families, and their communities' livelihood by forcing oil and natural gas workers out of their jobs, and replacing them with new "clean" technology to mobilize a "clean energy revolution", putting many Oklahomans at risk of falling into poverty within the next decade and increasing customers' utility bills.
 
