@@ -1,16 +1,22 @@
 ---
-title: "Targeting Kendra Horn in Renewable Energy Stance"
+title: "Targeting Okalhoma's 5th District in Renewable Energy"
 author: "Nikole Vannest, Cat Takata, Ethan Hoffman"
 date: "1/27/2021"
 output:
   pdf_document: default
   word_document: default
 ---
-1. We chose the Go Solar/Ready for 100 campaign (we are against solar power).
 
 
-2. Member of Congress: Rep. Kendra Horn (D) - Oklahoma District 5, 2018-2020
-(Lost her seat in the 2020 Oklahoma General Election to Stephanie Bice (R))
+1. Policy Campaign: **Ready for 100**. We are oppoosing renewable energy and siding with our conservative counterparts. 
+
+
+
+2. Member of Congress: **Rep. Kendra Horn (D)** - Oklahoma District 5, 2018-2020
+
+By manipulating the data variables consistent with renewable energy: "fundrenewables", drilloffshore", "discussOppose", and  Representative Kendra Scott (D) was isolated because of her progressive and centre position on select issues. By identifying her progressive stance, especially within Oklahoma's majorily conservative 5th District, we knew she did not align with the majorty of her constituents. Public opinion could pivot support for an environmental campgain as well as hers. In the interest of fun, we supoort the "anti-environmental" audience in order to remove Rep Horn or convince her to oppose the policy.  
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
@@ -84,7 +90,7 @@ Kendra_melt <- Kendra %>%
 ggplot(Kendra_melt, aes(x = value)) + 
   geom_col(aes(y = variable), fill = "red") +
   labs(y = c(), x = "Percent population",
-       title = "Public Perception of Global \n Warming as a Threat") +
+       title = "Oklahoma's 5th District Public Perception of Global \n Warming as a Threat") +
   scale_y_discrete(labels = c("Horn Win Margin", "GW not discussed", "Pro Offshore Drilling", "Lack of Media Attention", "Poor Timing", "Global Warming Important")) +
   theme_minimal()
   
@@ -93,6 +99,10 @@ ggplot(Kendra_melt, aes(x = value)) +
 
 
 3. Key Public Audience
+
+The oil and natural gas drilling industry of Oklahoma’s 5th Congressional District is a pivotal audience in determining support, or lack thereof, for the Ready for 100 campaign. Rep. Kendra Horn’s moderately progressive stance does not fully align with her majority conservative constituents; public opinion would urge her to oppose. As a member of the House Committee on Science, Space, and Technology, and a 83.32% estimated percentage for support funding research into renewable energy sources, Horn would be more inclined to introduce electrical and solar energy technology to reach clean energy standards. Key district stakeholders such as Devon Energy and Chesapeake Energy and Continental Resources along with the rest of the district’s heavily influenced drilling industry are threatened by this transition as it jeopardizes jobs and the districts’ financial livelihood. 
+
+Rep Horn’s 1.4 percentage points defeat over incumbent Rep. Steve Russell (R) and LCV score of 93 does not warrant incumbency for the next election. This small portion of voters could easily be swayed to replace Rep Horn in the next election. A more conservative candidate focused on maintaining jobs within the drilling industry and not pursuing progressive climate change policy would have more success with Oklahoma’s 5th District constituents. 
 
 
 4. Political Advertisement
