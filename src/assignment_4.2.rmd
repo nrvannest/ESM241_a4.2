@@ -22,7 +22,6 @@ Next, we explored OK District 5's of Rep Horn. This district has a 55.74 proport
 Code comments further describe the specific data wrangling techniques used to isolate the data. 
 
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
@@ -119,7 +118,7 @@ Rep Horn’s 1.4 percentage points defeat over incumbent Rep. Steve Russell (R) 
 
 ### 4. Political Advertisement
 
-The Reject Ready for 100 campaign will create television and print ads to reach its constituents, many of whom work in the oil and natural gas industry, and will be affected by Ready for 100 if it's implemented in Oklahoma.
+The Reject Ready for 100 campaign will create television and print ads to reach its constituents, many of whom work in the oil and natural gas industry, and will be affected by Ready for 100 if it's implemented in Oklahoma. This ad will encourage constituents to tell Representative Horn to reject Ready for 100 because it puts their jobs at risk.
 
 **Political Ad:**
 Oil and natural gas workers and their families are deeply concerned about Kendra Horn's support for Ready for 100, the clean energy campaign that will hurt Oklahoma's booming industries. Clean energy initiatives will affect our state's workers, their families, and their communities' livelihood by forcing oil and natural gas workers out of their jobs, and replacing them with new "clean" technology to mobilize a "clean energy revolution", putting many Oklahomans at risk of falling into poverty within the next decade and increasing customers' utility bills.
@@ -127,4 +126,19 @@ Oil and natural gas workers and their families are deeply concerned about Kendra
 Tell Kendra Horn: Protect our Workers, Protect their Jobs, Reject Ready for 100.
 
 
+**References for Section 3 (Key Public Audience)**
+
+Ballotpedia - Oklahoma 5th Congressional District 2020 Election: https://ballotpedia.org/Oklahoma%27s_5th_Congressional_District_election,_2020
+
+Ballotpedia - Kendra Horn: https://ballotpedia.org/Kendra_Horn
+
+Ballotpedia Stephanie Bice: https://ballotpedia.org/Stephanie_Bice
+
+Census Reporter Congressional District 5, OK: https://censusreporter.org/profiles/50000US4005-congressional-district-5-ok/
+
+Reuters - Oklahoma Oil Bust Article :https://www.reuters.com/investigates/special-report/usa-oklahoma-bust/
+
+U.S. Census Bureau - My Congressional District - Oklahoma District 5: https://www.census.gov/mycd/?st=40&cd=05
+
+AMP Research Lab - My District 2020: https://www.apmresearchlab.org/representingus/2020profiles#my-district
 
