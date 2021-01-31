@@ -8,13 +8,18 @@ output:
 ---
 
 
-1. Policy Campaign: **Ready for 100**. We are oppoosing renewable energy and siding with our conservative counterparts. 
+### 1. Policy Campaign: **Ready for 100**. We are oppoosing renewable energy and siding with our conservative counterparts. 
 
 
+### 2. Member of Congress: **Rep. Kendra Horn (D)** - Oklahoma District 5, 2018-2020
 
-2. Member of Congress: **Rep. Kendra Horn (D)** - Oklahoma District 5, 2018-2020
+Because we wanted to play the opposition, we targeted districts with low environmental priority and a vulnerable high LCV representative. Initially, we manipulated the metadata to explore specific variables consistent with the renewable energy theme of Ready for 100: "fundrenewables", drilloffshore", "discussOppose." Representative Kendra Scott (D) was isolated because of her progressive and centre position on select issues. 
 
-By manipulating the data variables consistent with renewable energy: "fundrenewables", drilloffshore", "discussOppose", and  Representative Kendra Scott (D) was isolated because of her progressive and centre position on select issues. By identifying her progressive stance, especially within Oklahoma's majorly conservative 5th District, we knew she did not align with the majority of her constituents. Public opinion could pivot support for an environmental campaign as well as hers. In the interest of fun, we support the "anti-environmental" audience in order to remove Rep Horn or convince her to oppose the policy.  
+With her in mind, we determined vulerbable candidates based on primary elections, with the intention that a campaign with low margins would be sensitive to constituent pressures. We filtered the dataset to isolate primary election percentages of votes < 0.60. Based on a 48.3% percentage of total primary votes received, Rep Horn is considered "vulnerable." 
+
+Next, we explored OK District 5's of Rep Horn. This district has a 55.74 proportion of constituents who want Congress to address climate change, revealing a moderate amount of climate change support, but not a majority. This fufilled our inital search for a district with low environmental policy support. **Figure 1** compiles public perception of environmental topics based on OK's conservative 5th District. The district has high consistent estimated percentages of apathy regarding global warming issues. Juxtaposed by Rep Horn's high LCV score of 93, she does not align with the majority of her constituents. Public opinion could pivot support for an environmental campgain as well as hers. In the interest of fun, we support the "anti-environmental" audience in order to remove Rep Horn or convince her to oppose the policy.  
+
+Code comments further describe the specific data wrangling techniques used to isolate the data. 
 
 
 ```{r setup, include=FALSE}
@@ -22,56 +27,59 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 ## Packages ----
 
-library(dplyr) #for data wrangling
-library(readxl) #for reading Excel file
-library(tidyverse) #for dataframe functions
-library(janitor) #for renaming variables
-library(ggplot2) #for plotting
-library(stringr) #for text manipulation
-library(here)
+library(dplyr) # Used for data wrangling, filter() and select() functinos used to isolate variables. 
+library(readxl) # Used to reading Excel metadata file.
+library(tidyverse) # Used for data frame functions. 
+library(janitor) # Used for "tidy data": renaming variables. 
+library(ggplot2) # Used for data visualization plots.  
+library(stringr) # Used for text manipulation. 
+library(here) # Used for to locally read in meta data. 
 
 `%nin%` = Negate(`%in%`)
 
 ## Reading data ----
 
-#reading datasets:
-#note: this will only work without changing the paths if you open the .Rproj file
+# Reading datasets to manipulate locally:
+# Note: this will only work without changing the paths if you open the .Rproj file
 data <- read.csv(here("data","congress_116_data.csv"))
 metadata <- read.csv(here("data", "Combined_Metadata.csv"))
 ```
 
 ```{r, data carpentry}
-#reordering metadata 'variable' to match variable order in 'data':
+
+# Reordering metadata 'variable' to match variable order in 'data':
 order <- match(names(data),metadata$variable)
 metadata <- metadata[order,]
 
 ## Data filtering and visualization to examine electoral vulnerability ----
 
-#selecting for vulnerable House members:
+# Selecting vulnerable House members:
 vulnerable <- data %>%
   filter(primary_percent < 0.6 | general_percent < 0.6)
 ```
 
 ```{r, exploratory graphs, include = FALSE}
-## Data filtering and vizualization to examine vulnerability and opinion ----
 
-#selecting Democrats vulnerable to primary challenges who are not strongest possible environmentalists:
+## Data filtering and visualization to examine vulnerability and public opinion ----
+
+# Selecting Democrats vulnerable to primary challenges AND who are not strongest possible environmentalists:
 vulnerableD <- data %>%
   filter(primary_percent < 0.6 & party == "D" & lcv_score<100)
 
-#plotting the distribution of LCV scores vs. constituent support to address climate:
+# Plotting the distribution of LCV scores vs. Constituent support to address climate:
 ggplot(vulnerableD, aes(x=lcv_score, 
                        y= congress)) + 
   geom_point() +
   geom_text(aes(label=district_id),
             hjust=0, vjust=0) +
-  ggtitle("LCV Scores of vulnerable Dems compared to \nproportion of constituents that want more action from Congress")
+  ggtitle("LCV Scores of Vulnerable Dems Compared to \nProportion of Constituents that Want Increased Action from Congress")
 
 
 ```
 
 ```{r, Final visual}
-# Subsetting data to focus on Oklahoma district 5 and select variables
+
+# Subsetting data to focus on Oklahoma district 5 and select variables -----
 
 library(reshape2)
 
@@ -86,26 +94,29 @@ Kendra_melt <- Kendra %>%
 
 # Table showing data from Kendra df
 
-#Bar plot showing constituent support for certain issues
+# Bar plot showing constituent support for certain issues
 ggplot(Kendra_melt, aes(x = value)) + 
   geom_col(aes(y = variable), fill = "red") +
   labs(y = c(), x = "Percent population",
-       title = "Oklahoma's 5th District Public Perception of Global \n Warming as a Threat") +
-  scale_y_discrete(labels = c("Horn Win Margin", "GW not discussed", "Pro Offshore Drilling", "Lack of Media Attention", "Poor Timing", "Global Warming Important")) +
+       title = "Public Perception of Global Warming as a Threat",
+       subtitle = "Oklahoma District 5, USA",
+       caption = "Figure 1") +
+  scale_y_discrete(labels = c("Horn Win Margin", "Rarly or Never Discuss GW", "Pro Offshore Drilling", "Hear About GW in the Media \nLittle to Never", "GW Effect Will Take 25 Years, \nLonger, or Never", "Global Warming Important")) +
   theme_minimal()
-  
 
 ```
 
+**Figure 1**: Estimated percenetages of constituents environmental opposition or apathy. Although a majority of consituents believe global warming to be an inmportant candidate platform topics, each variable revealsa a majority of constitudents (over 50%) that think timing of GW is not a priority, are pro offshore drilling, and or rarely to never discuss GW or experience it in the media. The final horizontal column "Horn Win Margin" highlights her low margin win in the 2018 primary election. 
 
-3. Key Public Audience
 
-The oil and natural gas drilling industry of Oklahoma’s 5th Congressional District is a pivotal audience in determining support, or lack thereof, for the Ready for 100 campaign. Rep. Kendra Horn’s moderately progressive stance does not fully align with her majority conservative constituents; public opinion would urge her to oppose. As a member of the House Committee on Science, Space, and Technology, and a 83.32% estimated percentage for support funding research into renewable energy sources, Horn would be more inclined to introduce electrical and solar energy technology to reach clean energy standards. Key district stakeholders such as Devon Energy and Chesapeake Energy and Continental Resources along with the rest of the district’s heavily influenced drilling industry are threatened by this transition as it jeopardizes jobs and the districts’ financial livelihood. 
+### 3. Key Public Audience
+
+The oil and natural gas drilling industry of Oklahoma’s 5th Congressional District is a pivotal audience in determining support, or lack thereof, for the Ready for 100 campaign. Rep. Kendra Horn’s moderately progressive stance does not fully align with her majority conservative constituents; public opinion would urge her to oppose. As a member of the House Committee on Science, Space, and Technology, Horn would be more inclined to introduce electrical and solar energy technology to reach clean energy standards. Key district stakeholders such as Devon Energy and Chesapeake Energy and Continental Resources along with the rest of the district’s heavily influenced drilling industry are threatened by this transition as it jeopardizes jobs and the districts’ financial livelihood. 
 
 Rep Horn’s 1.4 percentage points defeat over incumbent Rep. Steve Russell (R) and LCV score of 93 does not warrant incumbency for the next election. This small portion of voters could easily be swayed to replace Rep Horn in the next election. A more conservative candidate focused on maintaining jobs within the drilling industry and not pursuing progressive climate change policy would have more success with Oklahoma’s 5th District constituents. 
 
 
-4. Political Advertisement
+### 4. Political Advertisement
 
 The Reject Ready for 100 campaign will create television and print ads to reach its constituents, many of whom work in the oil and natural gas industry, and will be affected by Ready for 100 if it's implemented in Oklahoma. This ad will encourage constituents to tell Representative Horn to reject Ready for 100 because it puts their jobs at risk.
 
@@ -115,7 +126,6 @@ The Reject Ready for 100 campaign will create television and print ads to reach 
 Oil and natural gas workers and their families are deeply concerned about Kendra Horn's support for Ready for 100, the clean energy campaign that will hurt Oklahoma's booming industries. Clean energy initiatives will affect our state's workers, their families, and their communities' livelihood by forcing oil and natural gas workers out of their jobs, and replacing them with new "clean" technology to mobilize a "clean energy revolution", putting many Oklahomans at risk of falling into poverty within the next decade and increasing customers' utility bills.
 
 Tell Kendra Horn: Protect our Workers, Protect their Jobs, Reject Ready for 100.
-
 
 
 **References for Section 3 (Key Public Audience)**
@@ -133,3 +143,4 @@ Reuters - Oklahoma Oil Bust Article :https://www.reuters.com/investigates/specia
 U.S. Census Bureau - My Congressional District - Oklahoma District 5: https://www.census.gov/mycd/?st=40&cd=05
 
 AMP Research Lab - My District 2020: https://www.apmresearchlab.org/representingus/2020profiles#my-district
+
